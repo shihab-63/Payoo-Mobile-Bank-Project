@@ -146,3 +146,34 @@ document.getElementById('withdraw-money-btn').addEventListener('click', function
     document.getElementById('pin-number2').value = "";
 })
 
+// Transfer Money All Funtionality
+document.getElementById('send-now-btn').addEventListener('click', function (e) {
+    e.preventDefault();
+    // All Input Field Value
+    const userAccountNumber = getInputValue('user-account-number');
+    const amount2 = getInputValueNumber('amount2');
+    const pinNumber3 = getInputValueNumber('pin-number3');
+
+    // Available Balance
+    const availableBanalce = getAvailableBalance('available-balance');
+    
+    // Condition
+    if (userAccountNumber.length !== 11) {
+        return alert('⚠️Please Provite Valid User Account Number');
+    }else if (isNaN(amount2) || amount2 <= 0) {
+        return alert('⚠️Please enter a valid amount that is greater than zero.');
+    }else if (pinNumber3 !== pin) {
+        return alert('⚠️Please Provide Vaild Pin Number')
+    }else if(amount2 > availableBanalce) {
+        return alert('⚠️Insufficient Balance!');
+    }else {
+        const totalTransferMoney = availableBanalce - amount2;
+        document.getElementById('available-balance').innerText = totalTransferMoney;
+    }
+    
+    // All inputField Free
+    document.getElementById('user-account-number').value = '';
+    document.getElementById('amount2').value = '';
+    document.getElementById('pin-number3').value = '';
+})
+
