@@ -18,12 +18,26 @@ function colorToggling (id) {
     document.getElementById(id).classList.add('border-[#0874f2]', 'bg-[#0874f20d]');
 }
 
-// Function to get Input value
+// Function to get Input Integer Number
 function getInputValueNumber (id) {
     const inputFiled = document.getElementById(id);
     const inputFiledValue = inputFiled.value;
     const inputFieldValueNumber = parseInt(inputFiledValue);
     return inputFieldValueNumber;
+}
+
+// Function to get Input Value
+function getInputValue (id) {
+    const inputElement = document.getElementById(id);
+    const inputValue = inputElement.value;
+    return inputValue;
+}
+
+// Function to Get Available Balance
+function getAvailableBalance (id) {
+    const availableBanalceElement = document.getElementById(id);
+    const availableBanalce = availableBanalceElement.innerText;
+    return availableBanalce;
 }
 
 
@@ -65,21 +79,22 @@ document.getElementById('transaction-btn').addEventListener('click', function ()
     colorToggling('transaction-btn')
 })
 
+// Global Variable
+const pin = 1234;
 
 
-// Add Money All ingredient
+// Add Money All funtionality
 document.getElementById('add-money-login-btn').addEventListener('click', function(e) {
     e.preventDefault();
     // All Input Value
-    const selectABank = document.getElementById('select-a-bank').value;
-    const bankAccountNumber = document.getElementById('bank-account-number').value;
+    const selectABank = getInputValue('select-a-bank');
+    const bankAccountNumber = getInputValue('bank-account-number');
     const amountToAdd = getInputValueNumber('amount-to-add');
     const pinNumber = getInputValueNumber('pin-number');
 
     // Available Banalce value ParseInt
     const availableBanalce = parseInt(document.getElementById('available-balance').innerText);
 
-    const pin = 1234;
     // Condition 
     if (selectABank === "") {
         return alert('Please Select A Bank Account⚠️');
@@ -100,5 +115,34 @@ document.getElementById('add-money-login-btn').addEventListener('click', functio
     document.getElementById('amount-to-add').value = "";
     document.getElementById('pin-number').value = "";
     
+})
+
+
+// Cash Out All Funtionality
+document.getElementById('withdraw-money-btn').addEventListener('click', function(e) {
+    e.preventDefault();
+    const agentNumber = getInputValue('agent-number');
+    const amount = getInputValueNumber('amount');
+    const pinNumber = getInputValueNumber('pin-number2');
+
+    // Available Balance
+    const availableBanalce = getAvailableBalance('available-balance');
+
+    // Condition 
+    if (agentNumber.length !== 11) {
+        return alert('⚠️Please Provide Vaild Agent Number')
+    }else if (isNaN(amount) || amount <= 0){
+        return alert('⚠️Please enter a valid amount that is greater than zero.')
+    }else if (pinNumber !== pin) {
+        return alert("⚠️Please Provide Vaild Pin Number")
+    }else {
+        const totalCashOut = availableBanalce - amount;
+        document.getElementById('available-balance').innerText = totalCashOut
+    }
+
+    // All inputField Free
+    document.getElementById('agent-number').value = "";
+    document.getElementById('amount').value = "";
+    document.getElementById('pin-number2').value = "";
 })
 
