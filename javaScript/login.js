@@ -10,9 +10,11 @@ document.getElementById('login-btn').addEventListener('click', function(e) {
     const pinNumberInput = document.getElementById('four-digit-pin-input').value;
     
     // Condition here
-    if (mobileNumberInput === mobileNumber && pinNumberInput === pinNumber) {
-        window.location.href = './home.html';
-    }else (
-        alert('Wrong Credential')
-    )
+    if (mobileNumberInput !== mobileNumber) {
+        return alert('Provdte Valid Mobile Number❌');
+    }else if (pinNumberInput !== pinNumber) {
+        return alert('Provdte Valid Pin Number❌');
+    }else {
+        return window.location.href = './home.html';
+    }
 })
