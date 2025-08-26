@@ -7,13 +7,9 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-gray-200: oklch(92.8% 0.006 264.531);
     --color-gray-300: oklch(87.2% 0.01 258.338);
-    --color-gray-400: oklch(70.7% 0.022 261.325);
-    --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
-    --container-lg: 32rem;
     --text-sm: 0.875rem;
     --text-sm--line-height: calc(1.25 / 0.875);
     --text-lg: 1.125rem;
@@ -306,12 +302,6 @@
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 1px;
   }
-  .border-\[\#0874f2\] {
-    border-color: #0874f2;
-  }
-  .border-\[gray-300\] {
-    border-color: gray-300;
-  }
   .border-gray-300 {
     border-color: var(--color-gray-300);
   }
@@ -329,6 +319,12 @@
   }
   .bg-cover {
     background-size: cover;
+  }
+  .p-0 {
+    padding: calc(var(--spacing) * 0);
+  }
+  .p-0\.5 {
+    padding: calc(var(--spacing) * 0.5);
   }
   .p-1 {
     padding: calc(var(--spacing) * 1);
@@ -363,9 +359,26 @@
     font-size: var(--text-sm);
     line-height: var(--tw-leading, var(--text-sm--line-height));
   }
-  .text-xl {
-    font-size: var(--text-xl);
-    line-height: var(--tw-leading, var(--text-xl--line-height));
+  .text-\[1px\] {
+    font-size: 1px;
+  }
+  .text-\[5px\] {
+    font-size: 5px;
+  }
+  .text-\[10px\] {
+    font-size: 10px;
+  }
+  .text-\[12px\] {
+    font-size: 12px;
+  }
+  .text-\[13px\] {
+    font-size: 13px;
+  }
+  .text-\[14px\] {
+    font-size: 14px;
+  }
+  .text-\[50px\] {
+    font-size: 50px;
   }
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
@@ -379,12 +392,6 @@
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
   }
-  .text-\[\#080808\] {
-    color: #080808;
-  }
-  .text-\[\#080808a9\] {
-    color: #080808a9;
-  }
   .text-\[\#080808b3\] {
     color: #080808b3;
   }
@@ -396,12 +403,6 @@
   }
   .text-\[\#08080880\] {
     color: #08080880;
-  }
-  .text-\[\#08080883\] {
-    color: #08080883;
-  }
-  .text-\[\#08080894\] {
-    color: #08080894;
   }
   .text-white {
     color: var(--color-white);
@@ -424,13 +425,6 @@
     &:hover {
       @media (hover: hover) {
         background-color: #0874f20d;
-      }
-    }
-  }
-  .hover\:bg-\[\#0808080c\] {
-    &:hover {
-      @media (hover: hover) {
-        background-color: #0808080c;
       }
     }
   }
