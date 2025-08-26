@@ -164,17 +164,8 @@
   }
 }
 @layer utilities {
-  .m-0 {
-    margin: calc(var(--spacing) * 0);
-  }
-  .m-3 {
-    margin: calc(var(--spacing) * 3);
-  }
   .my-3 {
     margin-block: calc(var(--spacing) * 3);
-  }
-  .mt-1 {
-    margin-top: calc(var(--spacing) * 1);
   }
   .mt-1\.5 {
     margin-top: calc(var(--spacing) * 1.5);
@@ -182,71 +173,23 @@
   .mt-2 {
     margin-top: calc(var(--spacing) * 2);
   }
-  .mt-3 {
-    margin-top: calc(var(--spacing) * 3);
-  }
-  .mb-3 {
-    margin-bottom: calc(var(--spacing) * 3);
-  }
-  .box-border {
-    box-sizing: border-box;
-  }
   .flex {
     display: flex;
-  }
-  .table {
-    display: table;
   }
   .h-\[100vh\] {
     height: 100vh;
   }
-  .w-\[3px\] {
-    width: 3px;
-  }
-  .w-\[4px\] {
-    width: 4px;
-  }
-  .w-\[38px\] {
-    width: 38px;
-  }
   .w-\[316px\] {
     width: 316px;
   }
-  .w-\[338px\] {
-    width: 338px;
-  }
   .w-\[375px\] {
     width: 375px;
-  }
-  .w-\[380px\] {
-    width: 380px;
-  }
-  .w-\[400px\] {
-    width: 400px;
-  }
-  .w-\[402px\] {
-    width: 402px;
-  }
-  .w-\[415px\] {
-    width: 415px;
-  }
-  .w-\[450px\] {
-    width: 450px;
-  }
-  .w-\[px\] {
-    width: px;
   }
   .w-full {
     width: 100%;
   }
   .max-w-\[450px\] {
     max-width: 450px;
-  }
-  .border-collapse {
-    border-collapse: collapse;
-  }
-  .resize {
-    resize: both;
   }
   .flex-col {
     flex-direction: column;
@@ -260,17 +203,9 @@
   .rounded-3xl {
     border-radius: var(--radius-3xl);
   }
-  .border {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
-  }
   .border-0 {
     border-style: var(--tw-border-style);
     border-width: 0px;
-  }
-  .border-2 {
-    border-style: var(--tw-border-style);
-    border-width: 2px;
   }
   .bg-\[\#0874F2\] {
     background-color: #0874F2;
@@ -287,21 +222,6 @@
   .bg-cover {
     background-size: cover;
   }
-  .bg-center {
-    background-position: center;
-  }
-  .p-0 {
-    padding: calc(var(--spacing) * 0);
-  }
-  .p-2 {
-    padding: calc(var(--spacing) * 2);
-  }
-  .p-3 {
-    padding: calc(var(--spacing) * 3);
-  }
-  .p-4 {
-    padding: calc(var(--spacing) * 4);
-  }
   .p-8 {
     padding: calc(var(--spacing) * 8);
   }
@@ -311,13 +231,6 @@
   }
   .text-white {
     color: var(--color-white);
-  }
-  .underline {
-    text-decoration-line: underline;
-  }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
   }
   .focus\:outline-0 {
     &:focus {
