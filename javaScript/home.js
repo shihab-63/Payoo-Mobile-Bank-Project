@@ -114,7 +114,7 @@ document.getElementById('add-money-login-btn').addEventListener('click', functio
     document.getElementById('bank-account-number').value = "";
     document.getElementById('amount-to-add').value = "";
     document.getElementById('pin-number').value = "";
-     alert(`✅Congratulations! Sucessfully add money of ${amountToAdd}.`);
+     alert(`✅Congratulations! Successfully add money of ${amountToAdd}.`);
 })
 
 
@@ -144,7 +144,7 @@ document.getElementById('withdraw-money-btn').addEventListener('click', function
     document.getElementById('agent-number').value = "";
     document.getElementById('amount').value = "";
     document.getElementById('pin-number2').value = "";
-    alert(`✅Congratulations! Sucessfully cash out of ${amount}.`);
+    alert(`✅Congratulations! Successfully cash out of ${amount}.`);
 })
 
 // Transfer Money All Funtionality
@@ -176,7 +176,7 @@ document.getElementById('send-now-btn').addEventListener('click', function (e) {
     document.getElementById('user-account-number').value = '';
     document.getElementById('amount2').value = '';
     document.getElementById('pin-number3').value = '';
-    alert(`✅Congratulations! Sucessfully transfer money of ${amount2}.`);
+    alert(`✅Congratulations! Successfully transfer money of ${amount2}.`);
 })
 
 // Get Bonus All funtionality
@@ -227,7 +227,7 @@ document.getElementById('pay-now-btn').addEventListener('click', function(e){
         document.getElementById('bank-account-number2').value = '';
         document.getElementById('amount-to-pay').value = '';
         document.getElementById('pin-number4').value = '';
-        alert(`✅Congratulations! Sucessfully pay bill of ${amountToPay}.`);
+        alert(`✅Congratulations! Successfully pay bill of ${amountToPay}.`);
     }
     
 })
