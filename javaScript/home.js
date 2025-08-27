@@ -114,7 +114,7 @@ document.getElementById('add-money-login-btn').addEventListener('click', functio
     document.getElementById('bank-account-number').value = "";
     document.getElementById('amount-to-add').value = "";
     document.getElementById('pin-number').value = "";
-    
+     alert(`✅Congratulations! Sucessfully add money of ${amountToAdd}.`);
 })
 
 
@@ -144,6 +144,7 @@ document.getElementById('withdraw-money-btn').addEventListener('click', function
     document.getElementById('agent-number').value = "";
     document.getElementById('amount').value = "";
     document.getElementById('pin-number2').value = "";
+    alert(`✅Congratulations! Sucessfully cash out of ${amount}.`);
 })
 
 // Transfer Money All Funtionality
@@ -175,5 +176,58 @@ document.getElementById('send-now-btn').addEventListener('click', function (e) {
     document.getElementById('user-account-number').value = '';
     document.getElementById('amount2').value = '';
     document.getElementById('pin-number3').value = '';
+    alert(`✅Congratulations! Sucessfully transfer money of ${amount2}.`);
 })
 
+// Get Bonus All funtionality
+document.getElementById('get-bonus-btn2').addEventListener('click', function (e){
+    e.preventDefault();
+    const couponCode = 'BONUS100';
+    const bonus = 100;
+    const interBonusCoupon = getInputValue('inter-bonus-coupon').toUpperCase();
+    
+    // Condition
+    if (interBonusCoupon === ''){
+        return alert('Please enter a coupon code.')
+    }else if (interBonusCoupon === couponCode) {
+        const availableBanalce = parseInt(getAvailableBalance('available-balance'));
+        const sumBonus = availableBanalce + bonus;
+        document.getElementById('available-balance').innerText = sumBonus;
+        alert(`✅Congratulations! You have received a bonus of ${bonus}.`);
+    }
+    
+})
+
+// Pay Bill All funtionality
+document.getElementById('pay-now-btn').addEventListener('click', function(e){
+    e.preventDefault();
+    const selectToPay = getInputValue('select-to-pay');
+    const bankAccountNumber2 = getInputValue('bank-account-number2');
+    const amountToPay = getInputValueNumber('amount-to-pay');
+    const pinNumber4 = getInputValueNumber('pin-number4');
+
+    const availableBanalce = parseInt(getAvailableBalance('available-balance'));
+
+    // Condition
+    if (selectToPay === ''){
+        return alert('⚠️Please Select A Bank Account');
+    }else if (bankAccountNumber2.length !== 11){
+        return alert('⚠️Please Provide Vaild Bank Account Number')
+    }else if (isNaN(amountToPay) || amountToPay <= 0) {
+        return alert('⚠️Please enter a valid amount that is greater than zero.');
+    }else if(pinNumber4 !== pin) {
+        return alert ('⚠️Please Provide Vaild Pin Number');
+    }else if (amountToPay > availableBanalce){
+        return alert('⚠️Insufficient Balance!');
+    }else {
+        const totalPayBill = availableBanalce - amountToPay;
+        document.getElementById('available-balance').innerText = totalPayBill;
+        // Clean Input Fields
+        document.getElementById('select-to-pay').value = '';
+        document.getElementById('bank-account-number2').value = '';
+        document.getElementById('amount-to-pay').value = '';
+        document.getElementById('pin-number4').value = '';
+        alert(`✅Congratulations! Sucessfully pay bill of ${amountToPay}.`);
+    }
+    
+})
